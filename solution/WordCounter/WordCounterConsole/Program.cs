@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WordCounter.Helper;
+using WordCounterSolver;
 
 namespace WordCounter
 {
@@ -13,12 +14,9 @@ namespace WordCounter
         {
             // Read the file as one string.
             string textFromFile = System.IO.File.ReadAllText(@"..\..\FilesToRead\Test1.txt");
-            // Get each word.
-            string[] words = StringHelper.SplitWordsFromText(textFromFile);
-            // Word count
-            Dictionary<string, int> wordCount = StringHelper.GetWordCount(words);
-            // 
-            List<string> textToDisplay = StringHelper.GetLinesOfTextToDisplay(wordCount);
+
+            Solver solver = new Solver();
+            List<string> textToDisplay = solver.SolveChallenge(textFromFile);
 
             foreach (var line in textToDisplay)
             {

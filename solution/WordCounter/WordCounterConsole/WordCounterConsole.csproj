@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FilesToRead\Test1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordCounterSolver\WordCounterSolver.csproj">
+      <Project>{9A2279DA-B35D-4FA8-AE5D-2D227777109B}</Project>
+      <Name>WordCounterSolver</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
