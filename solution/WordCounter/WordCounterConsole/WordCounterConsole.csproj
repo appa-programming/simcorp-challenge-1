@@ -50,6 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FilesToRead\BaseTest.txt" />
     <Content Include="FilesToRead\Test1.txt" />
   </ItemGroup>
   <ItemGroup>

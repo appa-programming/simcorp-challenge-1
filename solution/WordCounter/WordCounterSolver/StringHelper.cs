@@ -18,12 +18,25 @@ namespace WordCounter.Helper
 
         public static Dictionary<string, int> GetWordCount(string[] words)
         {
-            throw new NotImplementedException();
+            var response = new Dictionary<string, int>();
+            foreach (var word in words)
+            {
+                if (response.ContainsKey(word))
+                    response[word]++;
+                else
+                    response.Add(word, 1);
+            }
+            return response;
         }
 
         public static List<string> GetLinesOfTextToDisplay(Dictionary<string, int> wordCount)
         {
-            throw new NotImplementedException();
+            List<string> response = new List<string>();
+            foreach (var keyValuePair in wordCount)
+            {
+                response.Add(keyValuePair.Value + ": " + keyValuePair.Key);
+            }
+            return response;
         }
     }
 }

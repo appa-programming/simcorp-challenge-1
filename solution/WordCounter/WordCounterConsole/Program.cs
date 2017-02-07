@@ -13,7 +13,7 @@ namespace WordCounter
         static void Main(string[] args)
         {
             // Read the file as one string.
-            string textFromFile = System.IO.File.ReadAllText(@"..\..\FilesToRead\Test1.txt");
+            string textFromFile = System.IO.File.ReadAllText(@"..\..\FilesToRead\BaseTest.txt");
 
             Solver solver = new Solver();
             List<string> textToDisplay = solver.SolveChallenge(textFromFile);
