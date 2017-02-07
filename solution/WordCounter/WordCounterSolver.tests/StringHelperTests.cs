@@ -10,64 +10,75 @@ namespace WordCounterSolver.tests
     {
         #region SplitWordsFromText
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void NoWord()
         {
             CollectionAssert.AreEqual(new string[0] { }, StringHelper.SplitWordsFromText(""));
         }
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void SimpleWord()
         {
             CollectionAssert.AreEqual(new string[1] { "a" }, StringHelper.SplitWordsFromText("a"));
         }
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void SimpleSpace()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a b"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void DoubleSpace()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a  b"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void MultipleSpace()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a                                               b"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void Comma()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a,b"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void CommaSpace()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a, b"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void CommaSpaceDot()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a, b. "));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void SpaceBeforeSpaceAfter()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("   a   b   "));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void NewLineAndTabs()
         {
             CollectionAssert.AreEqual(new string[2] { "a", "b" }, StringHelper.SplitWordsFromText("a.\n\tb"));
         }
 
         [TestMethod]
+        [TestCategory("SplitWordsFromText")]
         public void RepeatedWords()
         {
             CollectionAssert.AreEqual(new string[5] { "a", "b", "a", "b", "b" }, StringHelper.SplitWordsFromText("a b a b b"));
@@ -76,6 +87,7 @@ namespace WordCounterSolver.tests
 
         #region GetWordCount
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountNoWords()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -83,6 +95,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountSeperateWords()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -92,6 +105,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountRepeatedWords()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -100,6 +114,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountRepeatedWordsMaintainOrder1()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -109,6 +124,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountRepeatedWordsMaintainOrder2()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -118,6 +134,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetWordCount")]
         public void GetWordCountRepeatedWordsMultiple()
         {
             Dictionary<string, int> expected = new Dictionary<string, int>();
@@ -130,6 +147,7 @@ namespace WordCounterSolver.tests
 
         #region GetLinesOfTextToDisplay
         [TestMethod]
+        [TestCategory("GetLinesOfTextToDisplay")]
         public void GetLinesOfTextToDisplayNoLines()
         {
             List<string> expected = new List<string>();
@@ -137,6 +155,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetLinesOfTextToDisplay")]
         public void GetLinesOfTextToDisplayOneLine()
         {
             List<string> expected = new List<string>();
@@ -147,6 +166,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, response);
         }
         [TestMethod]
+        [TestCategory("GetLinesOfTextToDisplay")]
         public void GetLinesOfTextToDisplayManyLines()
         {
             List<string> expected = new List<string>();
@@ -160,9 +180,10 @@ namespace WordCounterSolver.tests
         }
         #endregion
 
-        #region Systemic
+        #region System
         [TestMethod]
-        public void SystemicSimple()
+        [TestCategory("System")]
+        public void SystemSimple()
         {
             List<string> expected = new List<string>();
             expected.Add("1: a");
@@ -171,7 +192,8 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, solver.SolveChallenge("a b"));
         }
         [TestMethod]
-        public void SystemicRepeated()
+        [TestCategory("System")]
+        public void SystemRepeated()
         {
             List<string> expected = new List<string>();
             expected.Add("2: a");
@@ -181,6 +203,7 @@ namespace WordCounterSolver.tests
             CollectionAssert.AreEqual(expected, solver.SolveChallenge("a b ,abc.\n a b b"));
         }
         [TestMethod]
+        [TestCategory("System")]
         public void SystemBaseTest()
         {
             List<string> expected = new List<string>();
@@ -199,6 +222,7 @@ namespace WordCounterSolver.tests
 
         #region GENERIC
         [TestMethod]
+        [TestCategory("GENERIC")]
         public void Casing()
         {
             List<string> expected = new List<string>();
