@@ -10,7 +10,12 @@ namespace WordCounter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test");
+            // Read the file as one string.
+            string textFromFile = System.IO.File.ReadAllText(@"..\..\FilesToRead\Test1.txt");
+
+
+
+            Console.WriteLine(textFromFile);
             Console.ReadLine();
         }
     }
